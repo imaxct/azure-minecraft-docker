@@ -2,7 +2,6 @@ enable_log_filter              = true # Chat privacy
 
 enable_auto_startstop          = false
 enable_backup                  = true
-enable_log_filter              = false
 
 location                       = "japaneast"
 
