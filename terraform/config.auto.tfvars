@@ -4,11 +4,13 @@ enable_auto_startstop          = false
 enable_backup                  = true
 enable_log_filter              = false
 
+location                       = "japaneast"
+
 
 minecraft_config               = {
   primary                      = {
     allow_ops_only             = "false"
-    container_image_tag        = "latest"
+    container_image_tag        = "java21"
     environment_variables      = {
       ALLOW_NETHER             = true
       ANNOUNCE_PLAYER_ACHIEVEMENTS = "true"
