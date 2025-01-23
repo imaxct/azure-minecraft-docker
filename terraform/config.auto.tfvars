@@ -19,12 +19,15 @@ minecraft_config               = {
       ICON                     = null # "https://raw.githubusercontent.com/geekzter/azure-minecraft-docker/main/visuals/aci.png"
       MAX_PLAYERS              = 10
       MODS                     = null
-      MODE                     = "survival "
+      MODE                     = "survival"
       MOTD                     = "Let's Minecraft!"
       OVERRIDE_SERVER_PROPERTIES = true # Use these settings over server.roperties every time the container starts
       SNOOPER_ENABLED          = "false"
       TYPE                     = "FORGE"
       VERSION                  = "1.21.4"
+      ONLINE_MODE              = "false"
+      ENABLE_WHITELIST         = "true"
+      WHITELIST                = "imaxct,jzZ,xxx"
     }
     minecraft_server_port      = 25565
 #     start_time                 = "12:00"
@@ -36,6 +39,8 @@ provisoner_email_address       = "nobody@no.no"
 
 minecraft_ops                  = ["imaxct"]
 minecraft_users                = [
+  "jzZ",
+  "xxx"
 ]
 subscription_id                = "1b18e49d-c4c5-4dfb-a839-c091b4c2705d"
 tenant_id                      = "c0985e67-29a5-4885-ac0b-2bd3414dfebc"
