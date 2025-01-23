@@ -44,16 +44,6 @@ resource azurerm_portal_dashboard minecraft_dashboard {
   )
 }
 
-resource azurerm_service_plan functions {
-  name                         = "${azurerm_resource_group.minecraft.name}-functions"
-  resource_group_name          = azurerm_resource_group.minecraft.name
-  location                     = azurerm_resource_group.minecraft.location
-  os_type                      = "Linux"
-  sku_name                     = "Y1"
-
-  tags                         = azurerm_resource_group.minecraft.tags
-}
-
 locals {
   create_service_principal     = (var.workflow_sp_application_id == "" || var.workflow_sp_object_id == "" || var.workflow_sp_application_secret == "") ? true : false  
   workflow_sp_application_id   = local.create_service_principal ? module.service_principal.0.application_id : var.workflow_sp_application_id

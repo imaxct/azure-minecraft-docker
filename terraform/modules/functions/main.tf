@@ -20,6 +20,16 @@ resource azurerm_storage_account functions {
   tags                         = var.tags
 }
 
+resource azurerm_service_plan functions {
+  name                         = var.function_name
+  resource_group_name          = var.resource_group_name
+  location                     = var.location
+  os_type                      = "Linux"
+  sku_name                     = "Y1"
+
+  tags                         = var.tags
+}
+
 resource azurerm_linux_function_app ping_test {
   name                         = var.function_name
   resource_group_name          = var.resource_group_name
@@ -28,7 +38,7 @@ resource azurerm_linux_function_app ping_test {
   app_settings                 = local.app_service_settings
   functions_extension_version  = "~4"
   https_only                   = true
-  service_plan_id              = var.app_service_plan_id
+  service_plan_id              = azurerm_service_plan.functions.id
   storage_account_access_key   = azurerm_storage_account.functions.primary_access_key
   storage_account_name         = azurerm_storage_account.functions.name
 

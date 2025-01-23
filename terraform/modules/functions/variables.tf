@@ -1,5 +1,3 @@
-variable app_service_plan_id {}
-
 variable appinsights_id {}
 variable appinsights_instrumentation_key {}
 
