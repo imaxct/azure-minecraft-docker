@@ -14,6 +14,16 @@ terraform {
 # HACK: Allow overriding of subscription_id/tenant_id with variables
 provider azurerm {
   alias                        = "defaults"
+  features {}
+  subscription_id              = var.subscription_id
+}
+data azurerm_subscription default {
+  provider                     = azurerm.defaults
+}
+provider azuread {
+  tenant_id                    = var.tenant_id
+}
+provider azurerm {
   features {
     resource_group {
       prevent_deletion_if_contains_resources = false
@@ -23,12 +33,6 @@ provider azurerm {
     }
   }
   subscription_id              = var.subscription_id
-  tenant_id                    = var.tenant_id
-}
-data azurerm_subscription default {
-  provider                     = azurerm.defaults
-}
-provider azuread {
   tenant_id                    = var.tenant_id
 }
 data azurerm_subscription primary {}
