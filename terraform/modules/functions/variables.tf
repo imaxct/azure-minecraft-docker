@@ -1,23 +1,23 @@
-variable appinsights_id {}
-variable appinsights_instrumentation_key {}
+variable "appinsights_id" {}
+variable "appinsights_instrumentation_key" {}
 
-variable function_name {}
+variable "function_name" {}
 
-variable location {}
+variable "location" {}
 
-variable log_analytics_workspace_resource_id {}
+variable "log_analytics_workspace_resource_id" {}
 
-variable minecraft_fqdn {}
-variable minecraft_port {}
+variable "minecraft_fqdn" {}
+variable "minecraft_port" {}
 
-variable resource_group_name {
-  type         = string
+variable "resource_group_name" {
+  type = string
 }
 
-variable tags {
-  type                         = map
+variable "tags" {
+  type = map(any)
 }
 
-variable suffix {
-  type         = string
+variable "suffix" {
+  type = string
 }
